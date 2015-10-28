@@ -9,7 +9,7 @@ internet pages. Only in case of changes I want to be notified.
 
 ## Download and Installation
 Binary JAR file can be downloaded from sourceforge:
-https://sourceforge.net/projects/urlregwatch/files/latest/download?source=navbar
+https://sourceforge.net/projects/urlregwatch/files/
 
 Arch Linux users should install the AUR package
 https://aur.archlinux.org/packages/urlregwatch/
