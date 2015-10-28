@@ -41,7 +41,7 @@ java -jar urlregwatch-0.1.0.jar
 Download and install Java from http://java.com, if the program java could not
 be found on your machine.
 
-=== Build ===
+## Build
 The easiest way is to clone the source repository and build it with gradle:
 ~~~
 git clone https://github.com/OpenHelios/urlregwatch.git
