@@ -1,2 +1,2 @@
 # urlregwatch
-Check internet pages for changes by regular expression 
+Check internet pages for changes by regular expression
