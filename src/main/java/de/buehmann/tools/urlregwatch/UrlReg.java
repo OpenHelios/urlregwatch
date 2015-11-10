@@ -14,6 +14,7 @@ public class UrlReg {
     private final String url;
     private final String regEx;
     private final String expected;
+    private boolean isLoaded;
     private boolean hasChanged;
     private String resultMessage;
 
@@ -25,9 +26,16 @@ public class UrlReg {
 
     public boolean load() throws IOException {
         final Browser browser = new Browser();
-        final String content = browser.getUrl(new URL(url));
+        final String content;
+        try {
+            content = browser.getUrl(new URL(url));
+        } catch (final IOException e) {
+            resultMessage = e.getMessage();
+            throw e;
+        }
         final Pattern pattern = Pattern.compile(regEx, Pattern.MULTILINE|Pattern.DOTALL);
         final Matcher matcher = pattern.matcher(content);
+        isLoaded = true;
         final boolean found;
         if (matcher.find()) {
             final String part = matcher.group(1);
@@ -46,6 +54,10 @@ public class UrlReg {
         return hasChanged;
     }
 
+    public boolean isLoaded() {
+        return isLoaded;
+    }
+
     public boolean hasChanged() {
         return hasChanged;
     }
@@ -53,10 +65,10 @@ public class UrlReg {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer();
-        if (hasChanged) {
-            sb.append(url).append(":\n").append(resultMessage);
-        } else {
+        if (isLoaded && !hasChanged) {
             sb.append("OK: ").append(url);
+        } else {
+            sb.append(url).append(":\n    ").append(resultMessage);
         }
         return sb.toString();
     }

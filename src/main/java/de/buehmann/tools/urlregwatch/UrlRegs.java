@@ -1,5 +1,5 @@
 package de.buehmann.tools.urlregwatch;
-
+ 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -36,7 +36,11 @@ public class UrlRegs {
         }
         if (!urls.isEmpty()) {
             for (final UrlReg url : urls) {
-                url.load();
+		try {
+	                url.load();
+		} catch (final IOException e) {
+			// ignore here
+		}
                 System.out.println(url.toString());
             }
         }
