@@ -24,6 +24,10 @@ public class UrlReg {
         this.expected = expected;
     }
 
+    public String getUrl() {
+	return url;
+    }
+
     public boolean load() throws IOException {
         final Browser browser = new Browser();
         final String content;

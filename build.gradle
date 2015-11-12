@@ -3,9 +3,9 @@ apply plugin: 'eclipse'
 group = 'de.buehmann.tools'
 version = '0.1.1'
 jar {
-    manifest {
-        attributes 'Main-Class': 'de.buehmann.tools.urlregwatch.Main'
-    }
+	manifest {
+		attributes 'Main-Class': 'de.buehmann.tools.urlregwatch.Main'
+	}
 }
 eclipse {
 	project {
