@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 group = 'de.buehmann.tools'
-version = '0.1.1'
+version = '0.1.2'
 jar {
 	manifest {
 		attributes 'Main-Class': 'de.buehmann.tools.urlregwatch.Main'
