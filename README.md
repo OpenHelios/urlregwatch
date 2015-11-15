@@ -66,6 +66,6 @@ gradle build
 ~~~
 
 ## History
-0.1.2 download all URLs asynchrone to improve performance
-0.1.1 minor changes in ouput format
-0.1.0 initial release
+* 0.1.2 download all URLs asynchrone to improve performance
+* 0.1.1 minor changes in ouput format
+* 0.1.0 initial release
