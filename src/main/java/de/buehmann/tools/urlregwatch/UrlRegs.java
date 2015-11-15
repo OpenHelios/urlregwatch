@@ -1,14 +1,12 @@
 package de.buehmann.tools.urlregwatch;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -49,7 +47,6 @@ public class UrlRegs {
 	private static List<UrlReg> readUrlsFromSettings() throws IOException {
 		final List<UrlReg> urls = new ArrayList<>();
 		try (final BufferedReader in = new BufferedReader(new FileReader(SETTINGS_FILE))) {
-			final StringBuilder sb = new StringBuilder();
 			final String[] line = new String[3];
 			int i = -1;
 			while (null != (line[++i] = in.readLine())) {
