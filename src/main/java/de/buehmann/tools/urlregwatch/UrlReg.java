@@ -34,7 +34,7 @@ public class UrlReg {
 		try {
 			content = browser.getUrl(new URL(url));
 		} catch (final IOException e) {
-			resultMessage = e.getMessage();
+			resultMessage = e.toString();
 			throw e;
 		}
 		final Pattern pattern = Pattern.compile(regEx, Pattern.MULTILINE | Pattern.DOTALL);
