@@ -47,11 +47,11 @@ public class UrlReg {
 				found = true;
 			} else {
 				found = false;
-				resultMessage = "expected  \"" + expected + "\"\n" + "but found \"" + part + "\".";
+				resultMessage = "\texpected \"" + expected + "\"\n\t" + "but found \"" + part + "\".";
 			}
 		} else {
 			found = false;
-			resultMessage = "Expression \"" + regEx + "\" has not been found in content.";
+			resultMessage = "\tExpression \"" + regEx + "\" has not been found in content.";
 		}
 		hasChanged = !found;
 		return hasChanged;
@@ -71,7 +71,7 @@ public class UrlReg {
 		if (isLoaded && !hasChanged) {
 			sb.append("OK: ").append(url);
 		} else {
-			sb.append(url).append(":\n    ").append(resultMessage);
+			sb.append(url).append("\n").append(resultMessage);
 		}
 		return sb.toString();
 	}
